@@ -1,15 +1,14 @@
-package Ejercicio_2.Main;
+package Ejercicio_3.Main;
 
-import Ejercicio_2.Classes.FileSorter;
-import Ejercicio_2.Exceptions.InvalidDirectoryException;
-
+import Ejercicio_3.Classes.FileSorter;
+import Ejercicio_3.Exceptions.InvalidDirectoryException;
 import java.io.File;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String directoryPath = "src" + File.separator + "Ejercicio_2" + File.separator + "resources";
+        String directoryPath = "src" + File.separator + "Ejercicio_3" + File.separator + "resources";
 
         try {
 
