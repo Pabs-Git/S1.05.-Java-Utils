@@ -1,6 +1,6 @@
-package Ejercicio_2.Classes;
+package Ejercicio_2.classes;
 
-import Ejercicio_2.Exceptions.InvalidDirectoryException;
+import Ejercicio_2.exceptions.InvalidDirectoryException;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

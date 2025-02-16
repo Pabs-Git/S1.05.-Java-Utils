@@ -1,7 +1,8 @@
-package Ejercicio_3.Classes;
+package Ejercicio_3.classes;
 
-import Ejercicio_3.Exceptions.InvalidDirectoryException;
-import java.io.File;
+import Ejercicio_3.exceptions.InvalidDirectoryException;
+
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
@@ -12,7 +13,6 @@ public class FileSorter {
         File directory = new File(directoryPath);
 
         if (!directory.exists()) {
-
             throw new InvalidDirectoryException("The specified directory doesn't exist");
         }
 
@@ -32,7 +32,6 @@ public class FileSorter {
         File directory = new File(directoryPath);
 
         if (!directory.exists()) {
-
             throw new InvalidDirectoryException("The specified directory doesn't exist");
         }
 
@@ -43,16 +42,31 @@ public class FileSorter {
 
         Arrays.sort(files);
 
+        File outputFile = new File("directory_listing.txt");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            writeDirectoryTree(files, writer, depth);
+        } catch (IOException e) {
+            System.out.println("Error while trying to writte the message: " + e.getMessage());
+        }
+
+        System.out.println("The directory tree has been saved inside 'Nivel_1': 'directory_listing.txt'");
+    }
+
+    private static void writeDirectoryTree(File[] files, BufferedWriter writer, int depth) throws IOException {
+
         for (File file : files) {
+
             String type = file.isDirectory() ? "(D)" : "(F)";
             String lastModified = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
                     .format(file.lastModified());
 
-            System.out.println("  ".repeat(depth) + file.getName() + " " + type + " [Last modified: " + lastModified + "]");
+            writer.write("  ".repeat(depth) + file.getName() + " " + type + " [Last modified: " + lastModified + "]");
+            writer.newLine();
 
             if (file.isDirectory()) {
-                listDirectoryTree(file.getAbsolutePath(), depth + 1);
+                writeDirectoryTree(file.listFiles(), writer, depth + 1);
             }
         }
     }
 }
+

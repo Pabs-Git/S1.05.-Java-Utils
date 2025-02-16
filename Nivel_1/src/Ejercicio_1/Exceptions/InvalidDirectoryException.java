@@ -1,4 +1,4 @@
-package Ejercicio_1.Exceptions;
+package Ejercicio_1.exceptions;
 
 public class InvalidDirectoryException extends Exception {
 

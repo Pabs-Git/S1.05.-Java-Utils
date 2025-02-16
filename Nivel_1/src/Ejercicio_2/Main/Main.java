@@ -1,7 +1,7 @@
-package Ejercicio_2.Main;
+package Ejercicio_2.main;
 
-import Ejercicio_2.Classes.FileSorter;
-import Ejercicio_2.Exceptions.InvalidDirectoryException;
+import Ejercicio_2.classes.FileSorter;
+import Ejercicio_2.exceptions.InvalidDirectoryException;
 
 import java.io.File;
 

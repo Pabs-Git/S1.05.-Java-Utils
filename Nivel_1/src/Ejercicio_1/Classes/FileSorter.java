@@ -1,6 +1,6 @@
-package Ejercicio_1.Classes;
+package Ejercicio_1.classes;
 
-import Ejercicio_1.Exceptions.InvalidDirectoryException;
+import Ejercicio_1.exceptions.InvalidDirectoryException;
 import java.io.File;
 import java.util.Arrays;
 
