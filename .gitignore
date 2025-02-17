@@ -1,8 +1,16 @@
-# Ignorar todo excepto los !
+# Ignorar todo por defecto
 /*
 
-!out/
-!out/**
-!src/
-!src/**
+# No ignorar la carpeta Nivel_1/src
+!README.txt
 !.gitignore
+!Nivel_1/
+!Nivel_1/src/
+!Nivel_1/src/**
+!Nivel_1/out/
+!Nivel_1/out/**
+
+# Ignorar todo lo demás dentro de Nivel_1, excepto src
+Nivel_1/*
+!Nivel_1/src/
+!Nivel_1/out/
