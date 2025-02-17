@@ -1,7 +1,8 @@
 # Ignorar todo excepto los !
 /*
 
+!out/
+!out/**
 !src/
 !src/**
 !.gitignore
-!README
