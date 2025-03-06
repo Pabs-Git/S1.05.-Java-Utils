@@ -14,15 +14,15 @@ public class Main {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
             out.writeObject(person);
             System.out.println("The object has been serialized.");
-        } catch (IOException e) {
-            e.printStackTrace();
+        }catch (IOException e) {
+            System.err.println("Error loading files: " + e.getMessage());
         }
 
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(filePath))) {
             Person deserializedPerson = (Person) in.readObject();
             System.out.println("The object has been deserialized: " + deserializedPerson);
         } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
+            System.err.println("Error loading files: " + e.getMessage());
         }
     }
 }

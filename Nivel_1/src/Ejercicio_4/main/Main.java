@@ -19,7 +19,7 @@ public class Main {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error loading file: " + e.getMessage());
         }
     }
 }
